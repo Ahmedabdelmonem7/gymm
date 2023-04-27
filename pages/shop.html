@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mian.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/2.png">
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <title>Tiger Gym | Home</title>
+</head>
+<body>
+    <header>
+        <!-- cart for mobile -->
+        <nav class="logo">
+            <img class="logo-icon" src="../images/2.png" alt="logo">
+            <h1>Tiger <span>GYM</span></h1>
+        </nav>
+        <nav class="options">
+            <ul>
+                <li title="Home"><a href="../index.html"><i class="fa-solid fa-house"></i> Home</li></a>
+                <li title="Shop"><a href="#"><i class="fa-solid fa-shop"></i> Shop</li></a>
+                <li title="Offers"><a href="#"><i class="fa-solid fa-star fa-bounce"></i> Offers</li></a>
+                <li title="Training"><a href="#"><i class="fa-solid fa-dumbbell"></i> Training</li></a>
+            </ul>
+        </nav>
+        <nav class="more">
+            <ul class="on" id="more">
+                <li title="Cart"><i class="fa-solid fa-cart-shopping"></i></li>
+                <li title="Search" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li title="Login"><i class="fa-solid fa-user"></i></li>
+                <li title="Settings"><i class="fa-solid fa-gear"></i></li>
+            </ul>
+            <div class="off" id="search">
+                <form method="POST">
+                    <input class="search-input" type="search">
+                    <input class="search-btn" type="submit" value='Search'>
+                </form>
+                
+                <i onclick="closeSearch()" class="fa-sharp fa-solid fa-xmark"></i>
+            </div>
+        </nav>
+
+        <!-- sidebar for mobile -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="user">
+                    <img src="../images/user3.png" alt="user-image">
+                    <div class="username-div">
+                        <p>UserName</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-shop"></i>
+                            <span>Shop</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-star fa-bounce"></i>
+                            <span>Offers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <span>Training</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Cart</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                            <i style="position:absolute;right:15px;" class="fa-solid fa-caret-down"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-icon">
+            <i id="searchMob" class='bx bx-search-alt'></i>
+            <i class="bx bx-menu" id="openbtn"></i>
+            <i class="fa-sharp fa-solid fa-xmark" id="closebtn"></i>
+        </div>
+        <nav class="user-info">
+            <!-- info open -->
+            <i id="icon-openn" class="fa-solid fa-caret-down"></i>
+            <img id="img-open" src="../images/user3.png" alt="user-image">
+            <!-- info close -->
+            <i style="display: none;" id="icon-close" class="fa-solid fa-caret-up"></i>
+            <img style="display: none;" class="img-close" src="../images/user3.png" alt="user-image">
+            <div class="user-more">
+                <img id="img-open" src="../images/user3.png" alt="user-image">
+                <h1>UserName</h1>
+                <p><span>ID : </span>548791</p>
+                <a href="#">Sign in</a>
+            </div>
+        </nav>
+        <nav class="nav-cart">
+            <i class='bx bxs-cart-alt'></i>
+        </nav>
+
+        <!-- search for mobile -->
+        <div class="search-mob">
+            <form method="POST">
+                <input class="search-inp-mob" type="search" name="search">
+                <button><i class='bx bx-search'></i></button>
+            </form>
+            <div class="close">
+                <i id="close-search-mob" class="fa-sharp fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        
+    </header>
+    <section>
+        
+    </section>
+    <!-- js -->
+    <script>
+        function search(){
+            document.getElementById('more').className = "off";
+            document.getElementById('search').className = 'search';
+        }
+        
+        function closeSearch(){
+            document.getElementById('more').className = "on";
+            document.getElementById('search').className = 'off';
+        }
+        // sidebar
+
+        let sideopenBtn = document.querySelector(".sidebar-icon #openbtn")
+        let sidecloseBtn = document.querySelector(".sidebar-icon #closebtn")
+        let sidebar = document.querySelector(".sidebar")
+        sidecloseBtn.style = "display:none";
+
+        sideopenBtn.onclick = function () {
+            sidebar.classList.toggle('active');
+            // sidebar.style.left = "0";
+            sideopenBtn.style = "display:none";
+            sidecloseBtn.style = "display:flex";
+        };
+
+        sidecloseBtn.onclick = function () {
+            sidebar.classList.toggle('active');
+            // sidebar.style.left = "-60%";
+            sidecloseBtn.style = "display:none";
+            sideopenBtn.style = "display:flex";
+        };
+
+        // search mob
+        let searchMob = document.querySelector("#searchMob");
+        let headerIcon1 = document.querySelector(".user-info");
+        let headerIcon2 = document.querySelector(".nav-cart");
+        let headerIcon3 = document.querySelector(".sidebar-icon");
+        let searchDIV = document.querySelector(".search-mob");
+        let closesearchMob = document.querySelector("#close-search-mob");
+        let logo = document.querySelector(".logo");
+        searchMob.onclick = function () {
+            headerIcon1.style = "display:none";
+            headerIcon2.style = "display:none";
+            headerIcon3.style = "display:none";
+            searchDIV.style = "display:flex;justify-content:center;align-items:center;width:90%;display: flex;height:100%";
+            logo.style = "display:none";
+        };
+
+        closesearchMob.onclick = function () {
+            headerIcon1.style = "display:flex";
+            headerIcon2.style = "display:flex";
+            headerIcon3.style = "display:flex";
+            searchDIV.style = "display:none";
+            logo.style = "display:flex";
+        };
+
+        // userinfo-mob onclick
+
+        let userInfo = document.querySelector(".user-info");
+        let userInfoIconOpen = document.querySelector(".user-info #icon-openn");
+        let userInfoImgOpen = document.querySelector(".user-info #img-open");
+        let userInfoIconClose = document.querySelector(".user-info #icon-close");
+        let userInfoImgClose = document.querySelector(".user-info .img-close");
+        let userMore = document.querySelector(".user-more");
+        userInfoImgOpen.onclick = function () {
+            userMore.style = "display:flex";
+            userInfoIconOpen.style = "display:none";
+            userInfoImgOpen.style = "display:none";
+            userInfoIconClose.style = "display:flex";
+            userInfoImgClose.style = "display:flex";
+        };
+        userInfoIconOpen.onclick = function () {
+            userMore.style = "display:flex";
+            userInfoIconOpen.style = "display:none";
+            userInfoImgOpen.style = "display:none";
+            userInfoIconClose.style = "display:flex";
+            userInfoImgClose.style = "display:flex";
+        };
+        userInfoImgClose.onclick = function () {
+            userMore.style = "display:none";
+            userInfoIconOpen.style = "display:flex";
+            userInfoImgOpen.style = "display:flex";
+            userInfoIconClose.style = "display:none";
+            userInfoImgClose.style = "display:none";
+        };
+        userInfoIconClose.onclick = function () {
+            userMore.style = "display:none";
+            userInfoIconOpen.style = "display:flex";
+            userInfoImgOpen.style = "display:flex";
+            userInfoIconClose.style = "display:none";
+            userInfoImgClose.style = "display:none";
+        };
+
+
+        let sections = document.querySelector("section");
+        sections.onclick = function () {
+            userMore.style = "display:none";
+            userInfoIconOpen.style = "display:flex";
+            userInfoImgOpen.style = "display:flex";
+            userInfoIconClose.style = "display:none";
+            userInfoImgClose.style = "display:none";
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
